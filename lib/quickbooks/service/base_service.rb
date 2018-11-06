@@ -19,6 +19,9 @@ module Quickbooks
 
       def initialize(attributes = {})
         domain = Quickbooks.sandbox_mode ? SANDBOX_DOMAIN : BASE_DOMAIN
+        if Rails.env.staging?
+          domain = 'quickbooks-e2e.api.intuit.com'
+        end
         @base_uri = "https://#{domain}/v3/company"
         attributes.each {|key, value| public_send("#{key}=", value) }
       end
