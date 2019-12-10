@@ -24,6 +24,7 @@ module Quickbooks
       xml_accessor :suffix, :from => 'Suffix'
       xml_accessor :display_name, :from => 'DisplayName'
       xml_accessor :print_on_check_name, :from => 'PrintOnCheckName'
+      xml_accessor :employment_status, :from => "EmploymentStatus"
       xml_accessor :active?, :from => 'Active'
       xml_accessor :primary_phone, :from => 'PrimaryPhone', :as => TelephoneNumber
       xml_accessor :mobile_phone, :from => 'Mobile', :as => TelephoneNumber
